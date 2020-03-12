@@ -422,3 +422,73 @@ Edit specific post using its ID.
 Delete a post.
 
 + Response 204
+
+
+
+## Photo [/photo]
+
+### List All Photo [GET]
+
+you may view all of Photo.
+
+
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "message": "Successful",
+            "data": [
+                {
+                    "id" : 1,
+                    "caption" : "istirahat"
+                    "url" : "abdul_salim.com"
+                    "contact_id" : 001
+                },
+                
+                {
+                    "id" : 2,
+                    "caption" : "belajar"
+                    "url" : "nadya_richna.com"
+                    "contact_id" : 002
+                }, 
+                {
+                    " "id" : 3,
+                    "caption" : "tidur"
+                    "url" : "indra_tjahyadi.com"
+                    "contact_id" : 003
+                }
+            ]
+        }
+        
+### Create a New Author [POST]
+
+You may create your Authir using this action. It takes a JSON
+object containing a name and username.
+
++ Request (application/json)
+
+         {
+            "id" : 4,
+            "caption" : "berenang"
+            "url" : "rahman.com"
+            "contact_id" : 004
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /photo/4
+
+    + Body
+
+               {
+                "status": "OK",
+                "message": "Successful",
+                "data": {
+                    "id" : 4,
+                    "caption" : "berenang"
+                    "url" : "rahman.com"
+                    "contact_id" : 004
+                }
+            }
